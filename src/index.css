@@ -22,3 +22,21 @@ body {
   max-width: 1820px;
   height: 100%;
 }
+
+.article-page {
+  img {
+    width: 60%;
+    height: auto;
+    margin: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .coverImage {
+    object-fit: cover;
+    width: 100%;
+    max-height: 40vh;
+  }
+  p {
+    margin: 2rem 0;
+  }
+}
