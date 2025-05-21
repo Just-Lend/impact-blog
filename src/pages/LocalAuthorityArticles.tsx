@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { useParams, useLocation } from "react-router-dom";
-import { getCampaignArticlesByCategory } from "../api/campaignArticleService";
+import { getCampaignArticlesByLocalAuthorityId } from "../api/campaignArticleService";
 import type { Article } from "../types";
 
-const CategorisedArticles: React.FC = () => {
-  const { category } = useParams<{ category: string }>();
+const LocalAuthorityArticles: React.FC = () => {
+  const { laId } = useParams<{ laId: string }>();
   const location = useLocation();
-  const { categoryName } = location.state || {};
+  const { laName } = location.state || {};
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    if (category) {
-      getCampaignArticlesByCategory(categoryName)
+    if (laId) {
+      getCampaignArticlesByLocalAuthorityId(Number(laId))
         .then((articles) => setArticles(articles))
         .catch((error) => console.error("Error fetching article:", error));
     }
-  }, [category]);
+  }, [laId]);
 
   return (
     <main className="container mx-auto px-4 py-4">
       <div className="text-2xl font-bold text-gray-800 mb-4">
-        {categoryName} Articles
+        {laName} Local Authority - Articles
       </div>
       {articles.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-4">
@@ -36,4 +36,4 @@ const CategorisedArticles: React.FC = () => {
   );
 };
 
-export default CategorisedArticles;
+export default LocalAuthorityArticles;

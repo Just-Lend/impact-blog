@@ -6,3 +6,22 @@ export interface BlogPost {
   coverImage: string;
   publishedAt: string;
 }
+
+export interface Article {
+  id: number;
+  title: string;
+  content: string;
+  image_urls: string[];
+  slug: string;
+  preview: string;
+  categories: string[];
+  tags: string[];
+}
+
+export interface LocalAuthority {
+  id: number;
+  name: string;
+  code: string;
+  latitude?: string;
+  longitude?: string;
+}

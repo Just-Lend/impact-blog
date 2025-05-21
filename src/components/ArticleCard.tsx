@@ -1,29 +1,38 @@
 import React from "react";
-
-interface Article {
-  id: number;
-  title: string;
-  preview: string;
-  image_urls: string[];
-  slug: string;
-}
+import type { Article } from "../types";
 
 const ArticleCard: React.FC<{ article: Article }> = ({ article }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <img
-      src={article.image_urls[0]}
-      alt={article.title}
-      className="w-full h-48 object-cover"
-    />
-    <div className="p-4">
-      <h2 className="text-xl font-semibold text-gray-800">{article.title}</h2>
-      <p className="mt-2 text-gray-600">{article.preview}</p>
+  <div className="bg-white  overflow-hidden">
+    <a href={`/articles/${article.slug}`}>
+      <img
+        src={article.image_urls[0]}
+        alt={article.title}
+        className="w-full h-52 object-cover"
+      />
+    </a>
+    <div className="py-4">
       <a
+        className="text-xl font-semibold text-gray-800 line-clamp-3 hover:underline"
         href={`/articles/${article.slug}`}
-        className="mt-4 inline-block text-blue-600 hover:underline"
       >
-        Read more
+        {article.title}
       </a>
+      <p className="mt-2 text-gray-600 line-clamp-4">{article.preview}</p>
+      <div className="mt-2 flex flex-col gap-y-2">
+        {/* Categories */}
+        {article.categories?.length > 0 && (
+          <div className="text-sm text-gray-800 font-semibold">
+            {article.categories.join(" / ")}
+          </div>
+        )}
+
+        {/* Tags */}
+        {article.tags?.length > 0 && (
+          <div className="text-xs text-gray-800 ">
+            {article.tags.join(" * ")}
+          </div>
+        )}
+      </div>
     </div>
   </div>
 );
