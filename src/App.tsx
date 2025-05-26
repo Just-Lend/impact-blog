@@ -16,7 +16,7 @@ const App: React.FC = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles/:slug" element={<ArticlePage />} />
-        <Route path="/categories/:category" element={<CategorisedArticles />} />
+        <Route path="/categories/:id" element={<CategorisedArticles />} />
         <Route path="/unsdgs/:unsdgNumber" element={<UNSDGArticles />} />
         <Route
           path="/local-authorities/:laId"

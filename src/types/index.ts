@@ -16,6 +16,7 @@ export interface Article {
   preview: string;
   categories: string[];
   tags: string[];
+  external_campaign?: any;
 }
 
 export interface LocalAuthority {

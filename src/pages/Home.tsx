@@ -7,6 +7,7 @@ import type { Article } from "../types";
 const Home: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   const fetchArticles = async () => {
     setLoading(true);
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       const articles = await getCampaignArticles();
       setArticles(articles);
     } catch (error) {
+      setHasError(true);
       console.error("Error fetching articles:", error);
     } finally {
       setLoading(false);
@@ -24,6 +26,16 @@ const Home: React.FC = () => {
   }, []);
 
   if (loading) return <Spinner />;
+
+  if (hasError) {
+    return (
+      <main className="container mx-auto px-4 py-4">
+        <div className="text-center text-gray-600 mt-20">
+          An error occurred, please try again later.
+        </div>
+      </main>
+    );
+  }
 
   if (articles.length === 0) {
     return (

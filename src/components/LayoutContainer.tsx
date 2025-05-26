@@ -5,7 +5,7 @@ interface Props {
 
 const LayoutContainer: React.FC<Props> = ({ children }) => {
   return (
-    <div className="mx-auto h-full  w-[90vw] tablet:w-[90vw] mobile:w-[95vw] py-4">
+    <div className="mx-auto  w-[90vw] tablet:w-[90vw] mobile:w-[95vw] py-4 flex-1">
       {children}
     </div>
   );

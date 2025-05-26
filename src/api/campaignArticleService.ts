@@ -20,10 +20,14 @@ export async function getCampaignArticleBySlug(slug: string) {
   return res.data;
 }
 
-export async function getCampaignArticlesByCategory(category: string) {
+export async function getCampaignArticlesByCategory(
+  categoryId: number,
+  categoryName: string
+) {
   const res = await axios.get(`/campaignArticles/category`, {
     params: {
-      category: category,
+      category_id: categoryId,
+      category_name: categoryName,
     },
   });
   return res.data;

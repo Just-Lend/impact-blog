@@ -3,20 +3,63 @@ import ArticleCard from "../components/ArticleCard";
 import { useParams, useLocation } from "react-router-dom";
 import { getCampaignArticlesByCategory } from "../api/campaignArticleService";
 import type { Article } from "../types";
+import Spinner from "../components/Spinner";
 
 const CategorisedArticles: React.FC = () => {
-  const { category } = useParams<{ category: string }>();
+  const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const { categoryName } = location.state || {};
   const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  const fetchCampaignArticlesByCategory = async (
+    categoryId: number,
+    categoryName: string
+  ) => {
+    try {
+      const articles = await getCampaignArticlesByCategory(
+        categoryId,
+        categoryName
+      );
+      setArticles(articles);
+    } catch (error) {
+      setHasError;
+      console.error("Error fetching articles by category:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    if (category) {
-      getCampaignArticlesByCategory(categoryName)
-        .then((articles) => setArticles(articles))
-        .catch((error) => console.error("Error fetching article:", error));
+    const categoryId = id ? parseInt(id) : null;
+    if (categoryId) {
+      fetchCampaignArticlesByCategory(categoryId, categoryName);
     }
-  }, [category]);
+  }, [id]);
+
+  if (loading) return <Spinner />;
+
+  if (hasError) {
+    return (
+      <main className="container mx-auto px-4 py-4">
+        <div className="text-center text-gray-600 mt-20">
+          An error occurred, please try again later.
+        </div>
+      </main>
+    );
+  }
+
+  if (articles.length === 0) {
+    return (
+      <main className="container mx-auto px-4 py-4">
+        <div className="text-2xl font-bold text-gray-800 mb-4">
+          Latest Articles
+        </div>
+        <div className="text-center text-gray-600">Articles not found</div>
+      </main>
+    );
+  }
 
   return (
     <main className="container mx-auto px-4 py-4">
