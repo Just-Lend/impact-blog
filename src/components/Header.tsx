@@ -4,7 +4,7 @@ import { getSDGs } from "../api/sdgService";
 import type { LocalAuthority } from "../types";
 import { getLocalAuthorities } from "../api/localAuthorityService";
 import { getAllCampaignCategories } from "../api/campaignCategories";
-import { FaFacebookF, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 
 const Header: React.FC = () => {
   const [openSectionDropdown, setOpenSectionDropdown] = useState(false);
