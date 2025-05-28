@@ -9,7 +9,7 @@ import Dan from "../../assets/team/dan.png";
 const About: React.FC = () => {
   return (
     <div className="bg-white text-gray-800 px-6 py-12 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">About Positive News</h1>
+      <h1 className="text-4xl font-bold mb-6">About Impact News</h1>
       <p className="text-lg mb-4">
         Positive News is the media brand for rigorous journalism about what’s
         going right.
