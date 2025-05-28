@@ -60,7 +60,7 @@ const ArticlePage: React.FC = () => {
   return (
     <article className="container mx-auto px-4 article-page">
       <img src={article.image_urls[0]} className="coverImage" />
-      <h1 className="text-4xl font-bold text-gray-800 mb-4 w-[60%] px-4 mx-auto">
+      <h1 className=" text-5xl font-bold leading-14 text-gray-800 mb-4 w-[60%] px-4 mx-auto">
         {article.title}
       </h1>
       <div className=" flex justify-between w-full mt-8 ">
