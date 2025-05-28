@@ -8,9 +8,12 @@ import CategorisedArticles from "./pages/CategorisedArticles";
 import LayoutContainer from "./components/LayoutContainer";
 import UNSDGArticles from "./pages/UNSDGArticles";
 import LocalAuthorityArticles from "./pages/LocalAuthorityArticles";
+import About from "./pages/about/About";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => (
   <Router>
+    <ScrollToTop />
     <Header />
     <LayoutContainer>
       <Routes>
@@ -22,6 +25,7 @@ const App: React.FC = () => (
           path="/local-authorities/:laId"
           element={<LocalAuthorityArticles />}
         />
+        <Route path="/about" element={<About />} />
       </Routes>
     </LayoutContainer>
     <Footer />

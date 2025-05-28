@@ -62,7 +62,6 @@ const Header: React.FC = () => {
             uniqueCategories.push(campaignCat);
           }
         }
-        console.log("hsj", uniqueCategories.length);
         setCampaignCategories(uniqueCategories);
       } catch (error) {
         console.error("Error fetching SDG data:", error);
