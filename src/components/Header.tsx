@@ -250,7 +250,7 @@ const Header: React.FC = () => {
             rel="noopener noreferrer"
           >
             <FaLinkedin
-              size={26}
+              size={25}
               color="white"
               className=" cursor-pointer bg-[#5603AD] rounded-full p-1"
             />
@@ -262,7 +262,7 @@ const Header: React.FC = () => {
             rel="noopener noreferrer"
           >
             <FaFacebookF
-              size={26}
+              size={25}
               color="white"
               className=" cursor-pointer bg-[#5603AD] rounded-full p-1"
             />
