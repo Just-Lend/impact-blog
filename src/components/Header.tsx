@@ -90,14 +90,14 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-[#f9f0ff] shadow-md sticky top-0 z-10 w-full">
-      <div className="px-[5vw] tablet:px-[5vw] mobile:px-[2.5vw] py-3">
+      <div className="px-[5vw] tablet:px-[5vw] mobile:px-[2.5vw] py-3 relative">
         <div className=" flex justify-between items-center">
           <a href="/" className="text-5xl font-semibold text-black">
             Impact.News
           </a>
 
           <div className="w-[45%] ">
-            <nav className=" space-x-24 w-full relative flex justify-start items-center ">
+            <nav className=" w-full relative flex justify-between items-center ">
               {/* Hoverable container */}
               <div
                 className="relative w-fit"
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
                 onMouseLeave={() => setOpenSectionDropdown(false)}
               >
                 <button
-                  className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer mx-6"
+                  className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
                   onClick={() => setOpenSectionDropdown((prev) => !prev)} // optional toggle on click
                 >
                   Categories
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
                 onMouseLeave={() => setOpenSDGDropdown(false)}
               >
                 <button
-                  className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer mx-6"
+                  className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
                   onClick={() => setOpenSDGDropdown((prev) => !prev)} // optional toggle on click
                 >
                   UNSDGs
@@ -196,53 +196,70 @@ const Header: React.FC = () => {
                 )}
               </div>
 
-              {/* <Link
-              to="/"
-              className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
-            >
-              Home
-            </Link> */}
+              <Link
+                to="/support"
+                className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
+              >
+                Support Impact News
+              </Link>
+              <Link
+                to="/magazine"
+                className=" font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
+              >
+                Magazine
+              </Link>
             </nav>
-            <div className="relative my-2 min-w-1/2">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setIsDropdownOpen(true);
-                }}
-                placeholder="Search local authority"
-                className="w-full px-3 py-2 border bg-gray-100 rounded-lg"
-                onFocus={() => setIsDropdownOpen(true)}
-                onBlur={() => setTimeout(() => setIsDropdownOpen(false), 150)}
-              />
+            <div className="my-2 min-w-1/2">
+              <div className="relative my-2 mb-3">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setIsDropdownOpen(true);
+                  }}
+                  placeholder="Search local authority"
+                  className="w-full px-3 py-2 border bg-gray-100 rounded-lg"
+                  onFocus={() => setIsDropdownOpen(true)}
+                  onBlur={() => setTimeout(() => setIsDropdownOpen(false), 150)}
+                />
 
-              {isDropdownOpen && (
-                <ul
-                  className="absolute z-10 w-full border bg-white shadow-lg rounded-lg mt-1 max-h-48 overflow-y-auto"
-                  onMouseDown={(e) => e.preventDefault()} // Prevents onBlur closing before click
-                >
-                  {localAuthorityList
-                    .filter((la) =>
-                      la.name.toLowerCase().includes(searchQuery.toLowerCase())
-                    )
-                    .map((la) => (
-                      <li
-                        key={la.id}
-                        className="p-3 hover:bg-gray-100 cursor-pointer"
-                        onMouseDown={() => {
-                          handleSelectLA(la.id.toString(), la.name);
-                        }}
-                      >
-                        {la.name}
-                      </li>
-                    ))}
-                </ul>
-              )}
+                {isDropdownOpen && (
+                  <ul
+                    className="absolute z-10 w-full border bg-white shadow-lg rounded-lg mt-1 max-h-48 overflow-y-auto"
+                    onMouseDown={(e) => e.preventDefault()} // Prevents onBlur closing before click
+                  >
+                    {localAuthorityList
+                      .filter((la) =>
+                        la.name
+                          .toLowerCase()
+                          .includes(searchQuery.toLowerCase())
+                      )
+                      .map((la) => (
+                        <li
+                          key={la.id}
+                          className="p-3 hover:bg-gray-100 cursor-pointer"
+                          onMouseDown={() => {
+                            handleSelectLA(la.id.toString(), la.name);
+                          }}
+                        >
+                          {la.name}
+                        </li>
+                      ))}
+                  </ul>
+                )}
+              </div>
+              <Link
+                to="/updates-signup"
+                className="  font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
+              >
+                Get Updates
+              </Link>
             </div>
           </div>
         </div>
-        <div className=" flex gap-x-2">
+
+        <div className=" flex gap-x-2 absolute left-[5vw] top-28 invisible">
           <a
             href={`https://www.linkedin.com/company/impactsos`}
             target="_blank"

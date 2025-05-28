@@ -37,7 +37,7 @@ const Footer: React.FC = () => (
       <Link to="/" className=" hover:underline ">
         Support
       </Link>
-      <Link to="/about" className=" hover:underline ">
+      <Link to="/updates-signup" className=" hover:underline ">
         Get Updates
       </Link>
     </div>
