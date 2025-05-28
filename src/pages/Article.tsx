@@ -60,11 +60,11 @@ const ArticlePage: React.FC = () => {
   return (
     <article className="container mx-auto px-4 article-page">
       <img src={article.image_urls[0]} className="coverImage" />
-      <h1 className="text-4xl font-bold text-gray-800 mb-4 w-4/6 mx-auto">
+      <h1 className="text-4xl font-bold text-gray-800 mb-4 w-[60%] px-4 mx-auto">
         {article.title}
       </h1>
-      <div className=" flex justify-between w-full mt-8">
-        <div className=" w-1/5 flex flex-col gap-y-2 pr-4">
+      <div className=" flex justify-between w-full mt-8 ">
+        <div className=" w-[20%] flex flex-col gap-y-2 pr-4">
           <div>
             <div className=" underline">Categories</div>
             <div className=" flex flex-col gap-y-2">
@@ -134,7 +134,7 @@ const ArticlePage: React.FC = () => {
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
         </div>
-        <div className=" w-1/8 flex flex-col gap-y-2 px-6">
+        <div className=" w-[10%] flex flex-col gap-y-2 px-6">
           <div className=" font-semibold">Share:</div>
           <div className=" flex flex-col gap-y-2">
             <a
