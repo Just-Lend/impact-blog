@@ -68,50 +68,44 @@ const ArticlePage: React.FC = () => {
           <div>
             <div className=" underline">Categories</div>
             <div className=" flex flex-col gap-y-2">
-              {article.external_campaign?.campaign_category_infos?.map(
-                (c: any) => (
-                  <Link
-                    className=" text-[#5603AD] font-semibold text-sm hover:underline"
-                    to={{
-                      pathname: "/categories/" + c.campaign_category?.id,
-                    }}
-                    state={{
-                      categoryName: c.campaign_category?.new_description,
-                    }}
-                  >
-                    {c.campaign_category?.new_description}
-                  </Link>
-                )
-              )}
+              {article?.external_campaign?.campaign_categories.map((c: any) => (
+                <Link
+                  className=" text-[#5603AD] font-semibold text-sm hover:underline"
+                  to={{
+                    pathname: "/categories/" + c.id,
+                  }}
+                  state={{
+                    categoryName: c.new_description,
+                  }}
+                >
+                  {c.new_description}
+                </Link>
+              ))}
             </div>
           </div>
           <div>
             <div className=" underline">UNSDGs</div>
             <div className=" flex flex-col gap-y-1 -ml-3">
-              {article.external_campaign?.campaign_category_infos?.map(
-                (c: any) => (
-                  <div className="flex justify-start items-center">
-                    <div className="w-3/12 h-12 flex items-center">
-                      <img
-                        src={c.campaign_category?.unsdg?.icon_url}
-                        className="w-full h-auto block"
-                        alt={
-                          c.campaign_category?.unsdg?.short_title || "SDG Icon"
-                        }
-                      />
-                    </div>
-                    <Link
-                      className="text-[#5603AD] font-semibold text-xs hover:underline w-9/12 flex items-center h-full"
-                      to={{
-                        pathname: "/unsdgs/" + c.campaign_category?.unsdg?.id,
-                      }}
-                      state={{ sdg: c.campaign_category?.unsdg }}
-                    >
-                      {c.campaign_category?.unsdg?.short_title || "Untitled"}
-                    </Link>
+              {article.external_campaign?.sdgs?.map((sdg: any) => (
+                <div className="flex justify-start items-center">
+                  <div className="w-3/12 h-12 flex items-center">
+                    <img
+                      src={sdg?.icon_url}
+                      className="w-full h-auto block"
+                      alt={sdg?.short_title || "SDG Icon"}
+                    />
                   </div>
-                )
-              )}
+                  <Link
+                    className="text-[#5603AD] font-semibold text-xs hover:underline w-9/12 flex items-center h-full"
+                    to={{
+                      pathname: "/unsdgs/" + sdg?.id,
+                    }}
+                    state={{ sdg: sdg }}
+                  >
+                    {sdg?.short_title || "Untitled"}
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
           <div>

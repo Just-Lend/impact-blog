@@ -4,20 +4,25 @@ import { Link } from "react-router-dom";
 
 const ArticleCard: React.FC<{ article: Article }> = ({ article }) => {
   const getCategoryNames = (article: any) => {
-    const categories = article.external_campaign?.campaign_category_infos?.map(
-      (c: any) => {
-        return {
-          id: c.campaign_category?.id,
-          name: c.campaign_category?.new_description,
-        };
-      }
+    // const categories = article.external_campaign?.campaign_category_infos?.map(
+    //   (c: any) => {
+    //     return {
+    //       id: c.campaign_category?.id,
+    //       name: c.campaign_category?.new_description,
+    //     };
+    //   }
+    // );
+    console.log("nns", article);
+    const categories = article?.external_campaign?.campaign_categories?.map(
+      (c: any) => c
     );
     return categories;
   };
   const getUNSDGs = (article: any) => {
-    const unsdgs = article.external_campaign?.campaign_category_infos?.map(
-      (c: any) => c.campaign_category?.unsdg
-    );
+    // const unsdgs = article.external_campaign?.campaign_category_infos?.map(
+    //   (c: any) => c.campaign_category?.unsdg
+    // );
+    const unsdgs = article?.external_campaign?.sdgs?.map((s: any) => s);
     return unsdgs;
   };
   const categories = getCategoryNames(article);

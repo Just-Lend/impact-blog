@@ -16,6 +16,8 @@ export interface Article {
   preview: string;
   categories: string[];
   tags: string[];
+  campaign_categories: any[];
+  sdgs: any[];
   external_campaign?: any;
 }
 
