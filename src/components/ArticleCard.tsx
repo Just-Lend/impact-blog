@@ -12,7 +12,6 @@ const ArticleCard: React.FC<{ article: Article }> = ({ article }) => {
     //     };
     //   }
     // );
-    console.log("nns", article);
     const categories = article?.external_campaign?.campaign_categories?.map(
       (c: any) => c
     );

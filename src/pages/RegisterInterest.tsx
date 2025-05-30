@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const UpdatesSignUp: React.FC = ({}) => {
+const RegisterInterest: React.FC = ({}) => {
   const location = useLocation();
   const { localAuthorityName } = location.state || {};
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    phoneNumber: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -25,17 +26,18 @@ const UpdatesSignUp: React.FC = ({}) => {
 
   return (
     <div className="max-w-xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold mb-6 text-center">Stay Updated</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        Register your Interest
+      </h1>
 
       {localAuthorityName ? (
         <p className="text-center text-base text-gray-600 mb-4">
-          You're signing up for updates related articles of projects in
+          You are registering interest for projects in
           <strong>{localAuthorityName}</strong>
         </p>
       ) : (
         <p className="text-center text-base text-gray-600 mb-4">
-          You're signing up for updates related to articles of projects in the
-          UK
+          You are registering interest for projects in the UK
         </p>
       )}
 
@@ -94,6 +96,23 @@ const UpdatesSignUp: React.FC = ({}) => {
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
+
+          <div>
+            <label
+              htmlFor="phoneNumber"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
           <button
             type="submit"
             className="w-full bg-[#5603AD] text-white py-2 px-4 rounded-md hover:bg-[#5a3ec0] transition hover:scale-105 cursor-pointer"
@@ -103,11 +122,11 @@ const UpdatesSignUp: React.FC = ({}) => {
         </form>
       ) : (
         <div className="text-center text-green-600 font-semibold text-lg">
-          Thank you for signing up!
+          Thank you for registering your interest!
         </div>
       )}
     </div>
   );
 };
 
-export default UpdatesSignUp;
+export default RegisterInterest;

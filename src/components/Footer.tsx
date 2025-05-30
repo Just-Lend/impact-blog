@@ -40,8 +40,8 @@ const Footer: React.FC = () => (
       <Link to="/magazine" className=" hover:underline ">
         Magazine
       </Link>
-      <Link to="/updates-signup" className=" hover:underline ">
-        Get Updates
+      <Link to="/register-interest" className=" hover:underline ">
+        Register Interest
       </Link>
     </div>
 

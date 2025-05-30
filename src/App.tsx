@@ -10,7 +10,7 @@ import UNSDGArticles from "./pages/UNSDGArticles";
 import LocalAuthorityArticles from "./pages/LocalAuthorityArticles";
 import About from "./pages/about/About";
 import ScrollToTop from "./components/ScrollToTop";
-import UpdatesSignUp from "./pages/UpdatesSignUp";
+import RegisterInterest from "./pages/RegisterInterest";
 import Magazine from "./pages/Magazine";
 import Support from "./pages/Support";
 
@@ -29,7 +29,7 @@ const App: React.FC = () => (
           element={<LocalAuthorityArticles />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/updates-signup" element={<UpdatesSignUp />} />
+        <Route path="/register-interest" element={<RegisterInterest />} />
         <Route path="/support" element={<Support />} />
         <Route path="/magazine" element={<Magazine />} />
       </Routes>

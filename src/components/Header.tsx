@@ -250,10 +250,10 @@ const Header: React.FC = () => {
                 )}
               </div>
               <Link
-                to="/updates-signup"
+                to="/register-interest"
                 className="  font-bold text-gray-600 hover:text-gray-900 hover:underline cursor-pointer"
               >
-                Get Updates
+                Register Interest
               </Link>
             </div>
           </div>
