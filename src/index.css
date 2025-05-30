@@ -21,6 +21,7 @@ body {
   place-items: center;
   max-width: 1820px;
   height: 100%;
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
 .article-page {

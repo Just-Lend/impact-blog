@@ -3,7 +3,7 @@ import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => (
-  <footer className="bg-[#fcf9ff] w-full px-[10%] pt-8">
+  <footer className="bg-[#fcf9ff] w-full px-[5%] pt-8">
     <div className=" flex gap-x-2 float-right">
       <a
         href={`https://www.linkedin.com/company/impactsos`}
@@ -34,8 +34,11 @@ const Footer: React.FC = () => (
       <Link to="/about" className=" hover:underline ">
         About Impact News
       </Link>
-      <Link to="/" className=" hover:underline ">
+      <Link to="/support" className=" hover:underline ">
         Support
+      </Link>
+      <Link to="/magazine" className=" hover:underline ">
+        Magazine
       </Link>
       <Link to="/updates-signup" className=" hover:underline ">
         Get Updates
