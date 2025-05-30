@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { getCampaignArticlesByCategory } from "../api/campaignArticleService";
 import type { Article } from "../types";
 import Spinner from "../components/Spinner";
@@ -8,10 +8,11 @@ import Spinner from "../components/Spinner";
 const CategorisedArticles: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
-  const { categoryName } = location.state || {};
+  const { category } = location.state || {};
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const navigate = useNavigate();
 
   const fetchCampaignArticlesByCategory = async (
     categoryId: number,
@@ -34,7 +35,7 @@ const CategorisedArticles: React.FC = () => {
   useEffect(() => {
     const categoryId = id ? parseInt(id) : null;
     if (categoryId) {
-      fetchCampaignArticlesByCategory(categoryId, categoryName);
+      fetchCampaignArticlesByCategory(categoryId, category.new_description);
     }
   }, [id]);
 
@@ -51,20 +52,25 @@ const CategorisedArticles: React.FC = () => {
   }
 
   if (articles.length === 0) {
-    return (
-      <main className="container mx-auto px-4 py-4">
-        <div className="text-2xl font-bold text-gray-800 mb-4">
-          Latest Articles
-        </div>
-        <div className="text-center text-gray-600">Articles not found</div>
-      </main>
-    );
+    navigate("/register-interest", {
+      state: {
+        category: category,
+      },
+    });
+    // return (
+    //   <main className="container mx-auto px-4 py-4">
+    //     <div className="text-2xl font-bold text-gray-800 mb-4">
+    //       Latest Articles
+    //     </div>
+    //     <div className="text-center text-gray-600">Articles not found</div>
+    //   </main>
+    // );
   }
 
   return (
     <main className="container mx-auto px-4 py-4">
       <div className="text-2xl font-bold text-gray-800 mb-4">
-        {categoryName} Articles
+        {category.new_description} Articles
       </div>
       {articles.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-4">

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const RegisterInterest: React.FC = ({}) => {
   const location = useLocation();
-  const { localAuthorityName } = location.state || {};
+  const { localAuthorityName, sdg, category } = location.state || {};
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -24,22 +24,45 @@ const RegisterInterest: React.FC = ({}) => {
     setSubmitted(true);
   };
 
+  function getHeading() {
+    if (localAuthorityName) {
+      return (
+        <p className="text-center text-base text-gray-600 mb-4">
+          You are registering interest for projects in
+          <strong> {localAuthorityName}</strong>
+        </p>
+      );
+    }
+    if (category) {
+      return (
+        <p className="text-center text-base text-gray-600 mb-4">
+          You are registering interest for projects on
+          <strong> {category.new_description}</strong>
+        </p>
+      );
+    }
+    if (sdg) {
+      return (
+        <p className="text-center text-base text-gray-600 mb-4">
+          You are registering interest for projects on
+          <strong> {sdg.short_title}</strong>
+        </p>
+      );
+    }
+    return (
+      <p className="text-center text-base text-gray-600 mb-4">
+        You are registering interest for projects in the UK
+      </p>
+    );
+  }
+
   return (
     <div className="max-w-xl mx-auto px-6 py-12">
       <h1 className="text-3xl font-bold mb-6 text-center">
         Register your Interest
       </h1>
 
-      {localAuthorityName ? (
-        <p className="text-center text-base text-gray-600 mb-4">
-          You are registering interest for projects in
-          <strong>{localAuthorityName}</strong>
-        </p>
-      ) : (
-        <p className="text-center text-base text-gray-600 mb-4">
-          You are registering interest for projects in the UK
-        </p>
-      )}
+      {getHeading()}
 
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-4">
