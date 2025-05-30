@@ -1,53 +1,53 @@
 import React from "react";
 import HorizontalLine from "../components/HorizontalLine";
+import coverTowerHamlets from "../assets/magazine/cover-towerhamlets.png";
+import zine2page1 from "../assets/magazine/2page1.png";
+import zine1page1 from "../assets/magazine/1page1.png";
+import zine2page3 from "../assets/magazine/2page3.png";
+
 const products = [
   {
     title: "Zine subscription (print & digital)",
     price: "£48.00 / year",
-    image: "https://picsum.photos/300/400?random=1",
+    image: coverTowerHamlets,
   },
   {
     title: "Print Zine subscription",
     price: "£48.00 for 1 year",
-    image: "https://picsum.photos/300/400?random=2",
+    image: coverTowerHamlets,
   },
   {
     title: "Digital Zine subscription",
     price: "£24.00 / year",
-    image: "https://picsum.photos/300/400?random=3",
+    image: coverTowerHamlets,
   },
   {
     title: "Zine Gift subscription",
     price: "£48.00",
-    image: "https://picsum.photos/300/400?random=4",
+    image: coverTowerHamlets,
   },
   {
     title: "Institutional subscription",
-    image: "https://picsum.photos/300/400?random=4",
+    image: coverTowerHamlets,
   },
   {
     title: "Impact News Tower Hamlets #2,",
     price: "£6.00",
-    image: "https://picsum.photos/300/400?random=5",
+    image: coverTowerHamlets,
   },
   {
     title: "Impact News City of London #1,",
     price: "£6.00",
-    image: "https://picsum.photos/300/400?random=6",
+    image: coverTowerHamlets,
   },
   {
     title: "Impact News Kensington and Chelsea #1,",
     price: "£48.00",
-    image: "https://picsum.photos/300/400?random=7",
+    image: coverTowerHamlets,
   },
 ];
 
-const heroImages = [
-  "https://picsum.photos/300/400?random=10",
-  "https://picsum.photos/300/400?random=11",
-  "https://picsum.photos/300/400?random=12",
-  "https://picsum.photos/300/400?random=13",
-];
+const heroImages = [coverTowerHamlets, zine2page1, zine1page1, zine2page3];
 
 const Magazine: React.FC = () => {
   return (
@@ -56,7 +56,7 @@ const Magazine: React.FC = () => {
       <section className="pb-6">
         <div className="mx-auto grid md:grid-cols-2  overflow-hidden ">
           {/* Left side - images with cyan background */}
-          <div className=" bg-[#ca99fe] p-6 space-y-4">
+          <div className=" bg-[#cbc8aa] p-6 space-y-4">
             {[0, 1].map((row) => (
               <div key={row} className="flex justify-end space-x-6">
                 <img
@@ -115,8 +115,8 @@ const Magazine: React.FC = () => {
                       alt={item.title}
                       className="h-60 w-auto mx-auto"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-[#ca99fe]/0 group-hover:bg-[#ca99fe]/40 transition duration-300">
-                      <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-2 border-white text-white font-bold py-2 px-4 rounded-md cursor-pointer">
+                    <div className="absolute inset-0 flex items-center justify-center bg-[#ca99fe]/0 group-hover:bg-[#cbc8aa]/40 transition duration-300">
+                      <button className="opacity-0 group-hover:opacity-50 transition-opacity duration-300 border-2 border-white text-white font-bold py-2 px-4 rounded-md cursor-pointer">
                         View
                       </button>
                     </div>
