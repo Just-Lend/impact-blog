@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { getCampaignArticlesByUNSDGs } from "../api/campaignArticleService";
 import type { Article } from "../types";
 import Spinner from "../components/Spinner";
@@ -12,6 +12,7 @@ const UNSDGArticles: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const navigate = useNavigate();
 
   const fetchCampaignArticlesByUNSDGs = async (number: number) => {
     try {
@@ -45,14 +46,19 @@ const UNSDGArticles: React.FC = () => {
   }
 
   if (articles.length === 0) {
-    return (
-      <main className="container mx-auto px-4 py-4">
-        <div className="text-2xl font-bold text-gray-800 mb-4">
-          Latest Articles
-        </div>
-        <div className="text-center text-gray-600">Articles not found</div>
-      </main>
-    );
+    navigate("/register-interest", {
+      state: {
+        sdg: sdg,
+      },
+    });
+    // return (
+    //   <main className="container mx-auto px-4 py-4">
+    //     <div className="text-2xl font-bold text-gray-800 mb-4">
+    //       Latest Articles
+    //     </div>
+    //     <div className="text-center text-gray-600">Articles not found</div>
+    //   </main>
+    // );
   }
 
   return (

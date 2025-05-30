@@ -122,7 +122,7 @@ const Header: React.FC = () => {
                             to={{
                               pathname: "/categories/" + category.id,
                             }}
-                            state={{ categoryName: category.new_description }}
+                            state={{ category: category }}
                             className="block text-sm font-semibold px-4 py-2 text-gray-700 hover:bg-gray-100 hover:underline w-full"
                           >
                             {formatSDGLabel(category.new_description)}
@@ -136,7 +136,7 @@ const Header: React.FC = () => {
                             to={{
                               pathname: "/categories/" + category.id,
                             }}
-                            state={{ categoryName: category.new_description }}
+                            state={{ category: category }}
                             className="block text-sm font-semibold px-4 py-2 text-gray-700 hover:bg-gray-100 hover:underline w-full"
                           >
                             {formatSDGLabel(category.new_description)}
@@ -184,7 +184,7 @@ const Header: React.FC = () => {
                             to={{
                               pathname: "/unsdgs/" + sdg.id,
                             }}
-                            state={{ unsdgPhoto: sdg.icon_url }}
+                            state={{ sdg: sdg }}
                             className="block text-sm font-bold px-4 py-2 text-gray-700 hover:bg-gray-100 w-full"
                           >
                             {formatSDGLabel(sdg.short_title)}
