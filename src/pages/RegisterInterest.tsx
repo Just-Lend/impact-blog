@@ -8,7 +8,7 @@ const RegisterInterest: React.FC = ({}) => {
     firstName: "",
     lastName: "",
     email: "",
-    phoneNumber: "",
+    phoneNumber: ""
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +20,7 @@ const RegisterInterest: React.FC = ({}) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate submit
-    console.log("Submitted:", formData);
+
     setSubmitted(true);
   };
 

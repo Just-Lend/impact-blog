@@ -5,34 +5,29 @@ import Blessing from "../../assets/team/blessing-musungate.png";
 import Craig from "../../assets/team/craig-smith.png";
 import Nazli from "../../assets/team/nazli.png";
 import Dan from "../../assets/team/dan.png";
+import Fin from "../../assets/team/fin.png";
 import HorizontalLine from "../../components/HorizontalLine";
+import DearReader from "../../assets/about/dear-reader.png";
+import Riya from "../../assets/about/about-riya.png";
 
 const About: React.FC = () => {
   return (
     <div className="bg-white text-gray-800 px-6 py-8  mx-auto">
-      <h1 className="text-4xl font-bold">About Our Impact News</h1>
-      <section className="my-12 ml-[5%] flex flex-col gap-y-4">
-        <p>
-          Impact News is a platform for celebrating grassroots action —
-          spotlighting the inspiring, often overlooked, local projects that are
-          making a real difference in people's lives.
-        </p>
-        <p>
-          We share the voices, faces, and ideas behind these initiatives — from
-          youth-led collectives to neighbourhood support networks — rooted in
-          care, creativity, and resilience. These are stories of people stepping
-          up to meet local needs, often with few resources but powerful
-          determination.
-        </p>
-        <p>
-          Each edition is a celebration of community spirit. We publish in print
-          and online, with 70% of profits going directly to fund the very
-          projects featured inside.a{" "}
-        </p>
-      </section>
-      <HorizontalLine />
+      <div className="flex">
+        <img
+          src={DearReader}
+          alt="Dear Reader"
+          className="w-[50%] mx-auto h-auto mb-8"
+        />
+        <img
+          src={Riya}
+          alt="Dear Reader"
+          className="w-[50%] mx-auto h-auto mb-8"
+        />
+      </div>
+      {/* <HorizontalLine /> */}
 
-      <section className="my-12 ml-[5%] flex flex-col gap-y-4">
+      {/* <section className="my-12 ml-[5%] flex flex-col gap-y-4">
         <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
         <p>
           Only 7% of charitable giving reaches micro community organisations —
@@ -59,11 +54,13 @@ const About: React.FC = () => {
           share their stories — or simply visit your local community centre and
           ask what’s happening. That’s where the real stories begin.
         </p>
-      </section>
+      </section> */}
 
       <HorizontalLine />
-      <section className="my-12 ml-[5%] flex flex-col gap-y-4">
-        <h2 className="text-2xl font-semibold mb-4">Our Organisation</h2>
+      <section className="my-12  flex flex-col gap-y-4">
+        <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">
+          Our Organisation
+        </h2>
 
         <p>
           Impact News began as a simple fundraising idea. Today, it’s part of a
@@ -85,34 +82,35 @@ const About: React.FC = () => {
       <HorizontalLine />
 
       <section className="my-12">
-        <h2 className="text-2xl font-semibold mb-4">Our Team</h2>
-        <div className="flex flex-wrap justify-start gap-24 mobile:gap-12">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center md:text-left">
+          Our Team
+        </h2>
+
+        <div className="grid gap-y-12 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
           <PersonItem
             imageSource={Craig}
             name="Craig Smith"
-            position="CEO / Director / Co-founder"
+            position="Editor / Founder / Director"
           />
-          <PersonItem imageSource={Dan} name="Daniel Miller" position="COO" />
+          <PersonItem
+            imageSource={Dan}
+            name="Daniel Miller"
+            position="Partnerships"
+          />
+          <PersonItem
+            imageSource={Fin}
+            name="Fin Nichols"
+            position="Photography"
+          />
           <PersonItem
             imageSource={Nazli}
             name="Nazlıcan Varışlı"
-            position="Developer"
-          />{" "}
+            position="Designer"
+          />
           <PersonItem
             imageSource={Blessing}
             name="Blessing Musungate"
-            position="Developer"
-          />
-        </div>
-      </section>
-      <HorizontalLine />
-      <section className="my-12">
-        <h2 className="text-2xl font-semibold mb-4">Board of Directors</h2>
-        <div className="flex flex-wrap justify-start gap-24 mobile:gap-12">
-          <PersonItem
-            imageSource={Craig}
-            name="Craig Smith"
-            position="CEO / Director / Co-founder"
+            position="Tech"
           />
         </div>
       </section>

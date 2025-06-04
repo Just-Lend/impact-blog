@@ -1,11 +1,11 @@
 import React from "react";
-import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => (
   <footer className="bg-[#fcf9ff] w-full px-[5%] pt-8">
     <div className=" flex gap-x-2 float-right">
-      <a
+      {/* <a
         href={`https://www.linkedin.com/company/impactsos`}
         target="_blank"
         rel="noopener noreferrer"
@@ -15,8 +15,7 @@ const Footer: React.FC = () => (
           color="white"
           className=" cursor-pointer bg-[#5603AD] rounded-full p-1"
         />
-      </a>
-
+      </a> */}
       <a
         href={`https://www.facebook.com/profile.php?id=61559563683647`}
         target="_blank"
@@ -27,21 +26,33 @@ const Footer: React.FC = () => (
           color="white"
           className=" cursor-pointer bg-[#5603AD] rounded-full p-1"
         />
+      </a>{" "}
+      <a
+        href={`https://www.instagram.com/impactsoszines/`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram
+          size={26}
+          color="white"
+          className=" cursor-pointer bg-[#5603AD] rounded-full p-1"
+        />
       </a>
     </div>
 
     <div className=" flex flex-col gap-y-2">
       <Link to="/about" className=" hover:underline ">
-        About Impact News
+        About Us
       </Link>
       <Link to="/support" className=" hover:underline ">
-        Support
+        Support Us
       </Link>
-      <Link to="/magazine" className=" hover:underline ">
-        Magazine
-      </Link>
+
       <Link to="/register-interest" className=" hover:underline ">
         Register Interest
+      </Link>
+      <Link to="/terms-and-conditions" className=" hover:underline ">
+        Terms & Conditions{" "}
       </Link>
     </div>
 
