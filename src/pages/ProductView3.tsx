@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Product1 from "../assets/magazine/cover-towerhamlets.png";
-import Product2 from "../assets/products/product1/product2.png";
-import Product3 from "../assets/products/product1/product3.png";
-import Product4 from "../assets/products/product1/product4.png";
-import Product5 from "../assets/products/product1/product5.png";
+import Product2 from "../assets/products/product1/Product2.png";
+import Product3 from "../assets/products/product1/Product3.png";
+import Product4 from "../assets/products/product1/Product4.png";
+import Product5 from "../assets/products/product1/Product5.png";
 
 const ProductView3: React.FC = () => {
   const [mainImage, setMainImage] = useState(Product1);
