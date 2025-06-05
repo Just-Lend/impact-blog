@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Product1 from "../assets/magazine/print-digital.png";
-import Product2 from "../assets/products/product1/Product2.png";
-import Product3 from "../assets/products/product1/Product3.png";
-import Product4 from "../assets/products/product1/Product4.png";
-import Product5 from "../assets/products/product1/Product5.png";
+import Product1 from "../assets/products/print-digital/print-digital-3.png";
+import Product2 from "../assets/products/print-digital/digital-1.png";
+import Product3 from "../assets/products/print-digital/print-digital-1.png";
+import Product4 from "../assets/products/print-digital/print-digital-2.png";
 
 const ProductView1: React.FC = () => {
   const [mainImage, setMainImage] = useState(Product1);
@@ -11,8 +10,7 @@ const ProductView1: React.FC = () => {
     { src: Product1, alt: "Product 1" },
     { src: Product2, alt: "Product 2" },
     { src: Product3, alt: "Product 3" },
-    { src: Product4, alt: "Product 4" },
-    { src: Product5, alt: "Product 5" }
+    { src: Product4, alt: "Product 4" }
   ];
 
   return (
@@ -48,8 +46,13 @@ const ProductView1: React.FC = () => {
         </h2>
         <p className="text-gray-700 mb-1">£68/year</p>
         <button
+          onClick={() =>
+            window.open(
+              "https://buy.stripe.com/8x200jgbB2dg9Ufbvh9MY08",
+              "_blank"
+            )
+          }
           className="bg-blue-600 text-white text-xs px-4 py-2 rounded uppercase tracking-wider"
-          disabled
         >
           Buy{" "}
         </button>
@@ -67,11 +70,10 @@ const ProductView1: React.FC = () => {
 
           <div>
             <h4 className="font-semibold mt-4"> Your subscription includes:</h4>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="list-disc list-outside pl-5 space-y-1">
               <li>The printed magazine delivered to your door</li>
               <li>A digital PDF copy sent to your inbox</li>
               <li>Published four times a year</li>
-              <li>Dodgeball sessions for dads and children to reconnect</li>
             </ul>
           </div>
           <div>

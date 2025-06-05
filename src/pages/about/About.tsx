@@ -63,9 +63,9 @@ const About: React.FC = () => {
         </h2>
 
         <p>
-          Impact News began as a simple fundraising idea. Today, it’s part of a
-          wider movement to create accessible, community-powered media that
-          gives back.
+          Our ImpactSOS Zine began as a simple fundraising idea. Today, it’s
+          part of a wider movement to create accessible, community-powered media
+          that gives back.
         </p>
         <p>
           We operate as an independent, social enterprise model — reinvesting

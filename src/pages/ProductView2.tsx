@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import Product1 from "../assets/magazine/print-digital.png";
-import Product2 from "../assets/products/product1/Product2.png";
-import Product3 from "../assets/products/product1/Product3.png";
-import Product4 from "../assets/products/product1/Product4.png";
-import Product5 from "../assets/products/product1/Product5.png";
-
+import Product1 from "../assets/products/digital/digital-3.png";
+import Product2 from "../assets/products/digital/digital-1.png";
+import Product3 from "../assets/products/digital/digital-2.png";
 const ProductView2: React.FC = () => {
   const [mainImage, setMainImage] = useState(Product1);
   const thumbnails = [
     { src: Product1, alt: "Product 1" },
     { src: Product2, alt: "Product 2" },
-    { src: Product3, alt: "Product 3" },
-    { src: Product4, alt: "Product 4" },
-    { src: Product5, alt: "Product 5" }
+    { src: Product3, alt: "Product 3" }
   ];
 
   return (
@@ -46,10 +41,15 @@ const ProductView2: React.FC = () => {
         <h2 className="text-xl font-semibold">Digital Zine Subscription</h2>
         <p className="text-gray-700 mb-1">£48/year</p>
         <button
+          onClick={() =>
+            window.open(
+              "https://buy.stripe.com/9B65kD4sT2dg8QbdDp9MY09",
+              "_blank"
+            )
+          }
           className="bg-blue-600 text-white text-xs px-4 py-2 rounded uppercase tracking-wider"
-          disabled
         >
-          Buy
+          Buy{" "}
         </button>
 
         <div className="mt-6 text-gray-800 space-y-4">
@@ -70,10 +70,9 @@ const ProductView2: React.FC = () => {
 
           <div>
             <h4 className="font-semibold mt-4"> Your subscription includes:</h4>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="list-disc list-outside pl-5 space-y-1">
               <li>PDF copies of each new issue (4 per year)</li>
               <li>Behind-the-scenes stories from local changemakers</li>
-              <li>Early updates on projects you’ve helped support</li>
             </ul>
           </div>
           <div>

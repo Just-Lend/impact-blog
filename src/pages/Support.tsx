@@ -192,10 +192,11 @@ const Support: React.FC = () => {
                   : "border-gray-200"
               }`}
             >
-              <h2 className="font-semibold">Monthly Subscribers</h2>
+              <h2 className="font-semibold"> Monthly Supporters</h2>
               <p className="text-sm text-gray-500">
-                Subscribe monthly to help continuously deliver resources to
-                verified local community initiatives
+                Help fund grassroots storytelling all year round. Together, we
+                can amplify local voices and reinvest in the people creating
+                change from the ground up
               </p>
             </button>
 
@@ -208,10 +209,10 @@ const Support: React.FC = () => {
                   : "border-gray-200"
               }`}
             >
-              <h2 className="font-semibold">One off Subscribers</h2>
+              <h2 className="font-semibold">️ One-off Supporters</h2>
               <p className="text-sm text-gray-500">
-                Your subscription will help support verified community
-                initiatives
+                Back one issue. Every contribution helps stories get told and
+                action take root
               </p>
             </button>
           </div>

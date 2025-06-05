@@ -73,7 +73,7 @@ const ProductView4: React.FC = () => {
 
           <div>
             <h4 className="font-semibold mt-4">Inside this issue:</h4>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="list-disc list-outside pl-5 space-y-1">
               <li>
                 Turning skills from prison into a business restoring boats for
                 social good
