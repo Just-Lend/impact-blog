@@ -45,10 +45,7 @@ const ProductView4: React.FC = () => {
       <div>
         <h2 className="text-xl font-semibold">Tower Hamlets Zine – Issue 1</h2>
         <p className="text-gray-700 mb-1">£10.00</p>
-        <button
-          className="bg-blue-600 text-white text-xs px-4 py-2 rounded uppercase tracking-wider"
-          disabled
-        >
+        <button className="bg-blue-800 text-white text-xs px-4 py-2 font-bold uppercase rounded-full cursor-pointer">
           Sold Out
         </button>
 

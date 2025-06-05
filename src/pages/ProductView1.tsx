@@ -52,7 +52,7 @@ const ProductView1: React.FC = () => {
               "_blank"
             )
           }
-          className="bg-blue-600 text-white text-xs px-4 py-2 rounded uppercase tracking-wider"
+          className="bg-blue-600 text-white text-xs px-4 py-2 rounded-full uppercase tracking-wider font-semibold shadow-md hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
         >
           Buy{" "}
         </button>
