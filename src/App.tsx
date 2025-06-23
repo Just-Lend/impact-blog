@@ -17,6 +17,7 @@ import ProductView2 from "./pages/ProductView2";
 import ProductView3 from "./pages/ProductView3";
 import ProductView4 from "./pages/ProductView4";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import MerchProductView from "./pages/MerchItemProductView";
 
 const App: React.FC = () => (
   <Router>
@@ -49,6 +50,7 @@ const App: React.FC = () => (
           element={<ProductView4 />}
         />{" "}
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/merch/:slug" element={<MerchProductView />} />
       </Routes>
     </LayoutContainer>
     <Footer />

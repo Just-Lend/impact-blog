@@ -56,14 +56,39 @@ const Footer: React.FC = () => (
       </Link>
     </div>
 
-    <div className="container mx-auto px-4 py-6 text-center text-gray-900">
-      <div className=" w-1/2 mx-auto text-sm my-2">
-        ImpactSOS is a Community Interest Company limited by guarantee without
-        share capital, incorporated in England & Wales. Registered Office: 99
-        Western Road, Lewes, BN7 1RS CIC Reg No: 16080399
+    <div className="container mx-auto px-4 py-6 text-center text-gray-900 text-sm space-y-4">
+      <div className="w-full md:w-2/3 lg:w-1/2 mx-auto space-y-2">
+        <p>
+          ImpactSOS is a Community Interest Company (CIC), limited by guarantee
+          and registered in England & Wales.
+        </p>
+        <p>CIC Registration No: 16080399</p>
+        <p>
+          Registered Office: Flat 3, Longman House, Bethnal Green, London, E2
+          0QT
+        </p>
       </div>
-      <div className=" mx-auto text-sm">
-        &copy; {new Date().getFullYear()} ImpactSOS. All rights reserved.
+
+      <div className="w-full  mx-auto space-y-2">
+        <p>&copy; {new Date().getFullYear()} ImpactSOS. All rights reserved.</p>
+        <p>
+          The technology and infrastructure used by ImpactSOS are developed and
+          owned by JustLend Limited, a private company limited by shares and
+          registered in England & Wales.
+        </p>
+        <p>Company Registration No: 10880150 | VAT No: 311161364</p>
+        <p>
+          Registered Office: DSG Group, FAO JustLend Ltd / ImpactSOS, Bird Hall
+          Lane, Stockport, SK3 0UX
+        </p>
+        <p>
+          ImpactSOS delivers its social mission through a not-for-profit CIC
+          structure, supported by JustLend Ltd in areas including technology,
+          product development, and operations. A proportion of trading surplus
+          is transferred to the CIC to fund grassroots community projects in
+          accordance with our governing community purpose.
+        </p>
+        <p>ImpactSOS and JustLend Ltd operate as separate legal entities.</p>
       </div>
     </div>
   </footer>
