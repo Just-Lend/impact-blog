@@ -7,15 +7,7 @@ import zine3 from "../assets/magazine/zine3.png";
 import PrintDigital from "../assets/magazine/print&digital.png";
 import Digital from "../assets/magazine/digital.png";
 import London from "../assets/magazine/london.png";
-import BeeswaxWraps from "../assets/products/selects/beeswax-wraps.png";
-import PlasticFreeHackney from "../assets/products/selects/plastic-free-hackney.png";
-import HackneyHerbalTeaBags from "../assets/products/selects/hackney-herbal-tea-bags.png";
-import HackneyHerbalJournal from "../assets/products/selects/hackney-herbal-journal.jpg";
-import SurplusSupperClub from "../assets/products/selects/surplus-supper-club-ticket.png";
-import EbonyHorseClub from "../assets/products/selects/ebony-horse-club.png";
-import CamdenSongWritings from "../assets/products/selects/camden-songwritings.png";
 import E14Honey from "../assets/products/selects/e14-honey.png";
-import ForestRecyclingProject from "../assets/products/selects/recycled-eye-mask.png";
 import Cap1 from "../assets/products/merch/cap-1.png";
 import Cap2 from "../assets/products/merch/cap-2.png";
 import Tshirt1 from "../assets/products/merch/tshirt-1.png";
@@ -68,64 +60,64 @@ const selects = [
     title: "E14 Honey – Limited Edition Urban Honey",
     price: "COMING SOON",
     image: E14Honey
-  },
-  {
-    id: "1",
-    slug: "",
-    title: "@beeurbanlondon Beeswax Wraps",
-    price: "Making moves",
-    image: BeeswaxWraps
-  },
-  {
-    id: "2",
-    slug: "",
-    title: "Plastic-Free Hackney – DIY Toiletries Kit",
-    price: "Making moves",
-    image: PlasticFreeHackney
-  },
-  {
-    id: "3",
-    slug: "",
-    title: "Hackney Herbal – Teabags ",
-    price: "Making moves",
-    image: HackneyHerbalTeaBags
-  },
-  {
-    id: "4",
-    slug: "",
-    title: "Hackney Herbal – Journal ",
-    price: "Making moves",
-    image: HackneyHerbalJournal
-  },
-  {
-    id: "5",
-    slug: "",
-    title: "Refettorio Felix – Surplus Supper Club",
-    price: "Making moves",
-    image: SurplusSupperClub
-  },
-  {
-    id: "6",
-    slug: "",
-    title: "Ebony Horse Club – Riding Lesson in Brixton",
-    price: "Making moves",
-    image: EbonyHorseClub
-  },
-  {
-    id: "7",
-    slug: "",
-    title: "Camden – Songwriting Prints for Sale",
-    price: "Making moves",
-    image: CamdenSongWritings
-  },
-
-  {
-    id: "9",
-    slug: "",
-    title: "Forest Recycling Project – Recycled Eye Masks",
-    price: "Making moves",
-    image: ForestRecyclingProject
   }
+  // {
+  //   id: "1",
+  //   slug: "",
+  //   title: "@beeurbanlondon Beeswax Wraps",
+  //   price: "Making moves",
+  //   image: BeeswaxWraps
+  // },
+  // {
+  //   id: "2",
+  //   slug: "",
+  //   title: "Plastic-Free Hackney – DIY Toiletries Kit",
+  //   price: "Making moves",
+  //   image: PlasticFreeHackney
+  // },
+  // {
+  //   id: "3",
+  //   slug: "",
+  //   title: "Hackney Herbal – Teabags ",
+  //   price: "Making moves",
+  //   image: HackneyHerbalTeaBags
+  // },
+  // {
+  //   id: "4",
+  //   slug: "",
+  //   title: "Hackney Herbal – Journal ",
+  //   price: "Making moves",
+  //   image: HackneyHerbalJournal
+  // },
+  // {
+  //   id: "5",
+  //   slug: "",
+  //   title: "Refettorio Felix – Surplus Supper Club",
+  //   price: "Making moves",
+  //   image: SurplusSupperClub
+  // },
+  // {
+  //   id: "6",
+  //   slug: "",
+  //   title: "Ebony Horse Club – Riding Lesson in Brixton",
+  //   price: "Making moves",
+  //   image: EbonyHorseClub
+  // },
+  // {
+  //   id: "7",
+  //   slug: "",
+  //   title: "Camden – Songwriting Prints for Sale",
+  //   price: "Making moves",
+  //   image: CamdenSongWritings
+  // },
+
+  // {
+  //   id: "9",
+  //   slug: "",
+  //   title: "Forest Recycling Project – Recycled Eye Masks",
+  //   price: "Making moves",
+  //   image: ForestRecyclingProject
+  // }
 ];
 const merch = [
   {
